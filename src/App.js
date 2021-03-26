@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { HashRouter as Router, withRouter } from 'react-router-dom';
+import Header from './components/Header';
+import Routes from './components/Routes';
+import { useEffect } from 'react';
+import { connect } from 'react-redux'
+import { getData } from "./features/asyncData"
 
-function App() {
+const mapDispatch = { getData }
+function App({ getData }) {
+  useEffect(() => {
+    getData()
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes />
+    </Router>
   );
 }
 
-export default App;
+export default connect(undefined, mapDispatch)(App);

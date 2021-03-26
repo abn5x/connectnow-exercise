@@ -1,0 +1,11 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .loading {
+    background-color: $panel-bg;
+    align-self: center;
+    justify-self: center;
+    padding: 1rem 2rem;
+  }
+}

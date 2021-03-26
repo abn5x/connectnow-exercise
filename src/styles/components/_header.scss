@@ -1,0 +1,44 @@
+.header-component {
+  display: flex;
+  margin-bottom: 4rem;
+  margin-left: 1.5rem;
+  a {
+    width: fit-content;
+    &:nth-child(2) {
+      margin-left: 2rem;
+    }
+    &:not(.home-active):not(.contact-active) {
+      &:hover {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+        transition: text-shadow 0.2s ease-in-out;
+      }
+    }
+  }
+  *::before {
+    animation-name: fadeIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    position: absolute;
+    color: $input-bg;
+    font-size: 3rem;
+    font-family: Montserrat;
+    font-weight: 600;
+    z-index: -1;
+    top: -80%;
+    left: -1.5rem;
+  }
+  .home-active {
+    position: relative;
+    &::before {
+      content: "VIDEO";
+      position: absolute;
+    }
+  }
+  .contact-active {
+    position: relative;
+    &::before {
+      content: "CONTACT";
+    }
+  }
+}

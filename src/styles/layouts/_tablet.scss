@@ -1,0 +1,139 @@
+@media screen and (max-width: 1140px) {
+  body {
+    padding: 3rem;
+  }
+  .video-games-component {
+    flex-direction: column;
+    .filter-component {
+      display: grid;
+      grid-template-columns: auto minmax(0, 100%) auto;
+      grid-template-areas: "a . ." "b . ." "c c c" "d e ." "f g h";
+      width: 100%;
+      margin: 0 0 2rem 0;
+      h3 {
+        grid-area: a;
+      }
+      label[for="name"] {
+        grid-area: b;
+        width: 100%;
+      }
+      #name {
+        grid-area: c;
+      }
+      label[for="score"] {
+        grid-area: d;
+      }
+      #score {
+        grid-area: f;
+        margin: 0;
+        margin-right: 2rem;
+      }
+      label[for="orderBy"] {
+        grid-area: e;
+      }
+      .orderBy {
+        margin-right: 2rem;
+        margin-bottom: 0;
+        grid-area: g;
+        .select-component {
+          position: relative;
+          .option:nth-child(2) {
+            position: absolute;
+            top: 40px;
+          }
+          .option:nth-child(3) {
+            position: absolute;
+            top: 80px;
+          }
+        }
+      }
+      .clear-btn {
+        grid-area: h;
+      }
+    }
+  }
+
+  .header-component {
+    flex-direction: column;
+    a {
+      &:nth-child(2) {
+        margin: 1rem 0 0 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 625px) {
+  body {
+    padding: 2rem;
+  }
+  .video-games-component {
+    .filter-component {
+      display: flex;
+      input {
+        margin: 0 0 2rem 0 !important;
+      }
+      .orderBy {
+        margin: 0 0 2rem 0 !important;
+
+        .option {
+          background-color: rgba($input-bg, 0.9);
+        }
+      }
+      .clear-btn {
+        width: 100%;
+      }
+    }
+  }
+  .item {
+    flex-direction: column;
+    height: 240px;
+    position: relative;
+    &__img {
+      width: 100%;
+      height: 50%;
+    }
+    &__info {
+      height: 50%;
+      padding: 1rem;
+      p {
+        font-size: 0.8rem !important;
+      }
+      p {
+        &:nth-child(4) {
+          font-size: 0.6rem !important;
+        }
+      }
+      h2 {
+        font-size: 1.2rem !important;
+      }
+    }
+    &__rating {
+      font-size: 1.2rem;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      margin: 0;
+      right: 1rem;
+      top: 1rem;
+    }
+  }
+  .contact-component {
+    form {
+      display: flex;
+      flex-direction: column;
+      #personName {
+        margin-right: 0;
+      }
+      .submit-btn {
+        align-self: flex-end;
+      }
+      label {
+        &::after {
+          content: " *";
+          color: $accent-color;
+        }
+      }
+    }
+  }
+}

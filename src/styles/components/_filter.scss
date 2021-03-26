@@ -1,0 +1,84 @@
+.filter-component {
+  display: flex;
+  flex-direction: column;
+  background-color: $panel-bg;
+  width: fit-content;
+  height: fit-content;
+  padding: 1rem;
+  min-width: 300px;
+  margin-right: 1rem;
+
+  h3 {
+    margin-bottom: 2rem;
+  }
+
+  label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  input {
+    border: none;
+    background-color: $input-bg;
+    height: $filter-height;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+    color: $text-color;
+    &:focus::placeholder {
+      color: transparent;
+    }
+    &::placeholder {
+      font-size: 0.8rem;
+      color: $text-color;
+    }
+  }
+
+  .orderBy {
+    display: flex;
+    margin-bottom: 1rem;
+    .box {
+      background-color: $accent-color;
+      cursor: pointer;
+      width: $filter-height;
+      height: $filter-height;
+      background-repeat: no-repeat;
+      background-size: contain;
+      &:hover {
+        background-color: lighten($accent-color, 5%);
+      }
+    }
+    img {
+      width: 80%;
+      height: 80%;
+      margin: 10%;
+    }
+    .ascend {
+      img {
+        transform: rotate(180deg);
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    .descend {
+      img {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    @import "customSelect";
+  }
+  .clear-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-color;
+    cursor: pointer;
+    height: $filter-height;
+    padding: 0 2rem;
+    width: fit-content;
+    align-self: flex-end;
+    &:hover {
+      background-color: lighten($accent-color, 5%);
+    }
+  }
+}

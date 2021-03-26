@@ -1,0 +1,42 @@
+.select-component {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  color: $text-color;
+  cursor: pointer;
+
+  .select-options {
+    width: 100%;
+  }
+  .option {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    justify-content: space-between;
+    height: $filter-height;
+    background-color: $input-bg;
+    &:hover {
+      background-color: lighten($input-bg, 5%);
+    }
+  }
+  .arrow-down {
+    width: 0;
+    height: 0;
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;
+
+    border-top: $arrow-size solid white;
+  }
+  .arrow-up {
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-left: $arrow-size solid transparent;
+    border-right: $arrow-size solid transparent;
+
+    border-bottom: $arrow-size solid white;
+  }
+}

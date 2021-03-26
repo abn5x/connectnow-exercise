@@ -1,0 +1,47 @@
+.item {
+  display: flex;
+  width: fit-content;
+  background-color: $panel-bg;
+  width: 100%;
+  height: 150px;
+  margin-bottom: 1rem;
+  &__img {
+    flex-shrink: 0;
+    background-color: $input-bg;
+    width: 150px;
+    max-height: 150px;
+  }
+  &__info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    &__text {
+      height: 100%;
+      overflow: scroll;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      p {
+        color: $text-color;
+        height: min-content;
+        text-overflow: clip;
+      }
+    }
+  }
+  &__rating {
+    align-self: center;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $accent-color;
+    padding: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 1.5rem;
+  }
+}

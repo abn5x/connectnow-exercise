@@ -1,0 +1,95 @@
+.contact-component {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 1rem;
+  max-width: 500px;
+  color: $text-color !important;
+
+  form {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas: "a ." "b c" "d e" "f ." "g g" ". h";
+    background-color: $panel-bg;
+    padding: 2rem;
+    h3 {
+      grid-area: a;
+      color: $text-color;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      cursor: pointer;
+      color: $text-color;
+      &[for="personName"] {
+        grid-area: b;
+      }
+      &[for="email"] {
+        grid-area: c;
+      }
+      &[for="message"] {
+        grid-area: f;
+      }
+    }
+    textarea {
+      grid-area: g;
+      background-color: $input-bg;
+      border: none;
+      height: 125px;
+      margin-bottom: 1rem;
+    }
+    input {
+      border: none;
+      background-color: $input-bg;
+      height: $filter-height;
+      padding: 0.5rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+      color: $text-color;
+      &:focus::placeholder {
+        color: transparent;
+      }
+      &::placeholder {
+        font-size: 0.8rem;
+        color: $text-color;
+      }
+    }
+    #personName {
+      grid-area: d;
+      margin-right: 1rem;
+    }
+    #email {
+      grid-area: e;
+    }
+
+    .submit-btn {
+      grid-area: h;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $accent-color;
+      cursor: pointer;
+      height: $filter-height;
+      padding: 0 2rem;
+      width: fit-content;
+      justify-self: end;
+      &:hover {
+        background-color: lighten($accent-color, 5%);
+      }
+    }
+  }
+  h2 {
+    color: $text-color;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  p {
+    color: $text-color;
+    margin-bottom: 3rem;
+  }
+}
